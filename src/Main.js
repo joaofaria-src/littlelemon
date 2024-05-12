@@ -7,6 +7,7 @@ import user1 from './Images/user1.jpg';
 import user2 from './Images/user2.jpg';
 import user3 from './Images/user3.jpg';
 import user4 from './Images/user4.jpg';
+import chefs from './Images/chefs.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking } from '@fortawesome/free-solid-svg-icons';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
@@ -69,7 +70,6 @@ function Main() {
             <section className="testimonials-section" style={{ backgroundColor: '#D9D9D9' }}>
                 <h2 className="testimonials-title">Testimonials</h2>
                 <div className="testimonial-grid">
-                    {/* Testimonial 1 */}
                     <div className="testimonial">
                         <img src={user1} alt="Testimonial 1" className="testimonial-image" />
                         <div className="testimonial-details">
@@ -128,6 +128,19 @@ function Main() {
                     </div>
                 </div>
             </section>
+            <section className="about-us-section">
+    <div className="about-us-content">
+        <div className="about-us-text">
+            <h2>Little Lemon</h2>
+            <h3>Chicago</h3>
+            <p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.
+Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit.</p>
+        </div>
+    </div>
+    <div className="about-us-image">
+        <img src={chefs} alt="About Us" />
+    </div>
+</section>
         </main>
     );
 }
