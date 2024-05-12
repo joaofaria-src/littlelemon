@@ -1,17 +1,13 @@
-.App {
-  text-align: center;
-  padding: 20px;
-}
-
 .header {
   display: flex;
-  justify-content: center; /* Center content horizontally */
-  align-items: center; /* Center content vertically */
+  justify-content: center; 
+  align-items: center; 
+  margin-top: 10px;
 }
 
 .container {
   display: flex;
-  align-items: center; /* Center content vertically */
+  align-items: center; 
 }
 
 .logo-container {
@@ -21,8 +17,38 @@
 .navbar {
   list-style-type: none;
   margin: 0;
-  padding: 0;
-  display: flex; /* Make the navbar flex */
+  padding: 20;
+  display: none;
+  transition: opacity 0.3s ease; 
+}
+
+.navbar.show {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 60px; 
+  left: 0;
+  background-color: #fff;
+  width: 100%;
+  padding: 10px;
+  z-index: 999;
+  opacity: 0; 
+  transition: opacity 0.3s ease;
+}
+
+.navbar.show.active {
+  opacity: 1; 
+}
+
+.menu-toggle {
+  display: block;
+  cursor: pointer;
+  padding: 10px;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle.rotate {
+  transform: rotate(180deg); 
 }
 
 .navbar li {
@@ -44,4 +70,238 @@
 
 .navbar li a:hover {
   color: #555;
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    display: flex;
+  }
+  .menu-toggle {
+    display: none;
+  }
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  background-color: #495E57;
+  color: white;
+  width: 100%;
+  margin-top: 20px;
+  height: 500px; 
+  overflow: hidden; 
+}
+
+.text-content {
+  text-align: left;
+  padding-top: 40px;
+  margin-right: 50px;
+}
+
+.title {
+  color: #F4CE14;
+  font-family: 'Markazi Text';
+  font-weight: medium;
+  font-size: 64pt;
+}
+
+.subtitle {
+  color: #EDEFEE;
+  font-family: 'Markazi Text';
+  font-size: 40pt;
+  margin-top: -20px;
+}
+
+.text-content p {
+  font-family: 'Karla';
+  font-size: 18pt;
+}
+
+.reserve-button {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.reserve-button:hover {
+  background-color: #333;
+}
+
+.restaurant-image {
+  max-width: 30%; 
+  padding-top: 20px;
+  position: relative; 
+}
+
+.restaurant-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    flex-direction: column; 
+    height: auto; 
+  }
+
+  .text-content {
+    padding-top: 20px; 
+    margin-left: 50px; 
+    text-align: center;
+  }
+
+  .subtitle {
+    margin-top: 5px; /* Adjust the margin for mobile */
+  }
+
+  .restaurant-image {
+    max-width: 60%; 
+    max-height: 50%; 
+    bottom: 0; 
+    margin-left: 0; 
+    margin-bottom: 20px;
+  }
+}
+
+.highlights-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  padding: 40px;
+}
+
+.highlights-content {
+  display: flex;
+  justify-content: space-between; /* Pushes the text to the left and the button to the right with space between them */
+  align-items: center;
+  width:50%; /* Ensure it takes full width */
+}
+
+.highlights-content h2 {
+  font-family: 'Karla', sans-serif;
+  font-size: 20pt;
+  font-weight: bold;
+}
+
+.order-menu-button {
+  background-color: #000;
+  color: #fff;
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.order-menu-button:hover {
+  background-color: #333;
+}
+
+/* Media query for mobile devices */
+@media (max-width: 768px) {
+  .highlights-content {
+    width:100%; /* Ensure it takes full width */
+  }
+
+  .highlights-content h2 {
+    font-size: 14pt;
+
+  }
+
+  .order-menu-button {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Karla', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
+}
+
+.dishes-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.dish-card {
+  flex: 0 1 calc(33.333% - 20px); 
+  border: 1px solid #EDEFEE;
+  border-radius: 16px 16px 5px 5px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dish-image {
+  width: 100%;
+  border-top-left-radius: 16px; 
+  border-top-right-radius: 16px; 
+  object-fit: cover;
+}
+
+.dish-details {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.dish-details h3 {
+  font-family: 'Karla', sans-serif;
+  font-size: 18px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.dish-price {
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  margin-right: 20px;
+  color: #EE9972;
+  font-weight: bold;
+}
+
+.dish-description {
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  color: #495E57;
+  margin-top: 10px;
+  text-align: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.order-delivery {
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  margin-left: 20px;
+}
+
+.delivery-icon {
+  font-size: 20px;
+  margin-left: 5px;
+}
+
+@media (max-width: 768px) {
+  .dish-details h3 {
+    font-size: 15px;
+    margin-left: 10px;
+  }
+  .dish-price {
+    font-size: 13px;
+    margin-right: 10px;
+  }
 }
