@@ -3,8 +3,13 @@ import image from './Images/restauranfood.jpg';
 import dish1 from './Images/dish1.jpg';
 import dish2 from './Images/dish2.svg';
 import dish3 from './Images/dish3.jpg';
+import user1 from './Images/user1.jpg';
+import user2 from './Images/user2.jpg';
+import user3 from './Images/user3.jpg';
+import user4 from './Images/user4.jpg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBiking } from '@fortawesome/free-solid-svg-icons';
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 function Main() {
     return (
@@ -59,6 +64,68 @@ function Main() {
                         </div>
                         <p className="dish-description">This comes straight from grandma’s recipe book, every last ingredient has been sourced and is as authentic as can be imagined.</p>
                         <p className="order-delivery">Order a delivery <FontAwesomeIcon icon={faBiking} className="delivery-icon" /></p>
+                </div>
+            </section>
+            <section className="testimonials-section" style={{ backgroundColor: '#D9D9D9' }}>
+                <h2 className="testimonials-title">Testimonials</h2>
+                <div className="testimonial-grid">
+                    {/* Testimonial 1 */}
+                    <div className="testimonial">
+                        <img src={user1} alt="Testimonial 1" className="testimonial-image" />
+                        <div className="testimonial-details">
+                            <h3>John Doe</h3>
+                            <div className="rating">
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                            </div>
+                            <p className="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.</p>
+                        </div>
+                    </div>
+                    <div className="testimonial">
+                        <img src={user2} alt="Testimonial 1" className="testimonial-image" />
+                        <div className="testimonial-details">
+                            <h3>John Doe</h3>
+                            <div className="rating">
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                            </div>
+                            <p className="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.</p>
+                        </div>
+                    </div>
+                    <div className="testimonial">
+                        <img src={user3} alt="Testimonial 1" className="testimonial-image" />
+                        <div className="testimonial-details">
+                            <h3>John Doe</h3>
+                            <div className="rating">
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                            </div>
+                            <p className="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.</p>
+                        </div>
+                    </div>
+                    <div className="testimonial">
+                        <img src={user4} alt="Testimonial 1" className="testimonial-image" />
+                        <div className="testimonial-details">
+                            <h3>John Doe</h3>
+                            <div className="rating">
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                                <FontAwesomeIcon icon={faStar} className="star" />
+                            </div>
+                            <p className="review">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam erat volutpat.</p>
+                        </div>
+                    </div>
                 </div>
             </section>
         </main>
