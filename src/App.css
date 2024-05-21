@@ -411,12 +411,12 @@
 
 .about-us-text p {
   font-family: 'Karla', sans-serif;
-  font-size: 18pt;
+  font-size: 20pt;
 }
 
 .about-us-image {
   max-width: 100%; 
-  height: auto; /
+  height: auto; 
 }
 
 .about-us-image img {
