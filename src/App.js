@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Header from './Header'; 
-import Nav from './Nav'; 
-import Main from './Main'; 
-import BookingPage from './BookingPage'; 
-import Footer from './Footer'; 
+import Header from './Header';
+import Nav from './Nav';
+import Main from './Main';
+import BookingPage from './BookingPage';
+import Footer from './Footer';
 
 function App() {
   return (

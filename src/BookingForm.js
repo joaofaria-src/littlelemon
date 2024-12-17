@@ -10,6 +10,7 @@ const BookingForm = () => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
+  const [emailError, setEmailError] = useState('');
   const [occasion, setOccasion] = useState('');
   const [numGuests, setNumGuests] = useState(1);
   const [errors, setErrors] = useState({});
@@ -17,6 +18,8 @@ const BookingForm = () => {
   const [selectedTime, setSelectedTime] = useState('');
   const [availableTimes, setAvailableTimes] = useState([]);
   const [submissionSuccess, setSubmissionSuccess] = useState(false);
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   useEffect(() => {
     if (selectedDate) {
@@ -30,13 +33,13 @@ const BookingForm = () => {
 
   const handleDateChange = (date) => {
     setSelectedDate(date);
-    setSelectedTime(''); 
+    setSelectedTime('');
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (validateForm()) {
-      const updatedTimes = availableTimes.filter(time => time !== selectedTime);
+      const updatedTimes = availableTimes.filter((time) => time !== selectedTime);
       await updateAvailableTimes(selectedDate, updatedTimes);
       setSubmissionSuccess(true);
       resetForm();
@@ -48,32 +51,46 @@ const BookingForm = () => {
     const errors = {};
 
     if (!firstName.trim()) {
-      errors.firstName = "First Name is required";
+      errors.firstName = 'First Name is required';
       valid = false;
     }
 
     if (!lastName.trim()) {
-      errors.lastName = "Last Name is required";
+      errors.lastName = 'Last Name is required';
       valid = false;
     }
 
     if (!email.trim()) {
-      errors.email = "Email is required";
+      errors.email = 'Email is required';
+      valid = false;
+    } else if (!emailRegex.test(email)) {
+      errors.email = 'Please enter a valid email address';
       valid = false;
     }
 
     if (!occasion.trim()) {
-      errors.occasion = "Occasion is required";
+      errors.occasion = 'Occasion is required';
       valid = false;
     }
 
     if (!selectedDate || !selectedTime) {
-      errors.dateTime = "Date and Time are required";
+      errors.dateTime = 'Date and Time are required';
       valid = false;
     }
 
     setErrors(errors);
     return valid;
+  };
+
+  const handleEmailChange = (e) => {
+    const value = e.target.value;
+    setEmail(value);
+
+    if (!emailRegex.test(value)) {
+      setEmailError('Please enter a valid email address');
+    } else {
+      setEmailError('');
+    }
   };
 
   const resetForm = () => {
@@ -83,12 +100,15 @@ const BookingForm = () => {
     setOccasion('');
     setNumGuests(1);
     setSelectedDate(null);
-    setSelectedTime(null);
+    setSelectedTime('');
     setErrors({});
+    setEmailError('');
   };
 
   const timesOptions = availableTimes.map((time) => (
-    <option key={time} value={time}>{time}</option>
+    <option key={time} value={time}>
+      {time}
+    </option>
   ));
 
   return (
@@ -128,11 +148,12 @@ const BookingForm = () => {
               type="email"
               id="email"
               value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              onChange={handleEmailChange}
               required
               aria-required="true"
               aria-describedby="emailError"
             />
+            {emailError && <span id="emailError" className="error">{emailError}</span>}
             {errors.email && <span id="emailError" className="error">{errors.email}</span>}
           </div>
           <div className="form-group range-container">
@@ -163,7 +184,9 @@ const BookingForm = () => {
                 aria-required="true"
                 aria-describedby="occasionError"
               >
-                <option value="" disabled hidden>Select Occasion</option>
+                <option value="" disabled hidden>
+                  Select Occasion
+                </option>
                 <option value="casual">Casual</option>
                 <option value="birthday">Birthday</option>
                 <option value="engagement">Engagement</option>
@@ -185,9 +208,11 @@ const BookingForm = () => {
               aria-label="Select a date"
               aria-required="true"
             />
-            {selectedDate && (              
+            {selectedDate && (
               <div>
-                <label htmlFor="select-time" id="select-time-label">Time*</label>
+                <label htmlFor="select-time" id="select-time-label">
+                  Time*
+                </label>
                 <select
                   id="select-time"
                   value={selectedTime}
@@ -196,15 +221,18 @@ const BookingForm = () => {
                   aria-required="true"
                   aria-describedby="dateTimeError"
                 >
-                  <option value="" disabled hidden>Select Time</option>
+                  <option value="" disabled hidden>
+                    Select Time
+                  </option>
                   {timesOptions}
                 </select>
               </div>
             )}
-            <br />
             {errors.dateTime && <span id="dateTimeError" className="error">{errors.dateTime}</span>}
           </div>
-          <button className="formButton" type="submit">Submit</button>
+          <button className="formButton" type="submit">
+            Submit
+          </button>
         </form>
       </div>
       {submissionSuccess && (

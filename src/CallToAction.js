@@ -1,6 +1,6 @@
 import React from 'react';
 import image from './Images/restauranfood.jpg';
-import { Link } from 'react-router-dom'; 
+import { Link } from 'react-router-dom';
 
 function CallToAction() {
     return (
