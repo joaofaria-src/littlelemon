@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/littlelemon/static/css/main.fcda3975.css",
+    "main.js": "/littlelemon/static/js/main.f3222d3b.js",
+    "static/media/dish2.svg": "/littlelemon/static/media/dish2.29ea078fea3d3120ed22402e901b5bbc.svg",
+    "static/media/dish1.jpg": "/littlelemon/static/media/dish1.bed423a1fab5b210e347.jpg",
+    "static/media/restauranfood.jpg": "/littlelemon/static/media/restauranfood.e8abf5b772b6817189aa.jpg",
+    "static/media/chefs.jpg": "/littlelemon/static/media/chefs.3172189adddb5626b64e.jpg",
+    "static/media/footer.jpg": "/littlelemon/static/media/footer.324d0f99bdf19400a0f7.jpg",
+    "static/media/dish3.jpg": "/littlelemon/static/media/dish3.ba524d3f1c3909f6bd06.jpg",
+    "static/media/logo.svg": "/littlelemon/static/media/logo.f72c913c48c5334f78f2c336ec36f22b.svg",
+    "index.html": "/littlelemon/index.html",
+    "main.fcda3975.css.map": "/littlelemon/static/css/main.fcda3975.css.map",
+    "main.f3222d3b.js.map": "/littlelemon/static/js/main.f3222d3b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fcda3975.css",
+    "static/js/main.f3222d3b.js"
+  ]
+}
