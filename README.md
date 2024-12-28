@@ -42,8 +42,8 @@ A responsive web app designed to improve the **Reserve a Table** functionality f
 ### Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/little-lemon-capstone.git
-cd little-lemon-capstone
+git clone https://github.com/joaofaria-src/littlelemon.git
+cd littlelemon
 ```
 
 ### Install Dependencies
